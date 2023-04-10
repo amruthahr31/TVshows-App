@@ -1,0 +1,14 @@
+.form-search {
+  display: flex;
+  justify-content: center;
+
+}
+
+.search-icon {
+  padding-right: 5px;
+  justify-self: center;
+}
+
+.input-search {
+  padding-right: 1rem;
+}
