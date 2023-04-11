@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CurrentShowsComponent } from './Components/current-shows/current-shows.component';
@@ -23,6 +22,11 @@ import { SearchService } from './../app/Services/search.service';
 import { SearchShowComponent } from './../app/Components/search-show/search-show.component';
 import { SearchbarComponent } from './../app/Components/searchbar/searchbar.component';
 import { ShowBasedOnGenreComponent } from './Components/show-based-on-genre/show-based-on-genre.component';
+import {  MatSidenavModule} from "@angular/material/sidenav";
+import { MatListModule} from "@angular/material/list";
+import {MatButtonModule} from '@angular/material/button';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +52,14 @@ import { ShowBasedOnGenreComponent } from './Components/show-based-on-genre/show
     MatInputModule,
     FlexLayoutModule,
     MatSelectModule,
-    CommonModule
+     MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    CommonModule,
+  
   ],
   providers: [ShowsService,SearchService],
   bootstrap: [AppComponent]

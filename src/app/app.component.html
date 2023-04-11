@@ -1,28 +1,37 @@
-<!-- <app-current-shows class="view"></app-current-shows>  -->
-<!-- <app-seasons-episodes></app-seasons-episodes> -->
-
 <div>
-  <mat-toolbar color="accent" class="toolbar">
-    <div class="nav-items">
-      <mat-icon (click)="gethomepage()">theaters</mat-icon>
-      <h2>Variety TV Shows</h2>
-    </div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+  <img class="logo" (click)="gethomepage()" src="../assets/images/logo-2 .png" />
+  </a>
 
-    <div class="nav-items">
-      <a mat-button (click)="gethomepage()">Home</a>
-      <a mat-button #Action id="Action" (click)="getShowsByGenre(Action)">Action</a><br>
-      <a mat-button #Comedy id="Comedy" (click)="getShowsByGenre(Comedy)">Comedy</a><br>
-      <a mat-button #Drama id="Drama" (click)="getShowsByGenre(Drama)">Drama</a><br>
-      <a mat-button (click)="getshowschedule()">Schedules</a>
-    </div>
-
-    <app-searchbar (searchEvent)="doSearch($event)"></app-searchbar>
-
-  </mat-toolbar>
-
-  <app-search-show [searchShow]="currentShowName"></app-search-show>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
 
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-items" mat-button (click)="gethomepage()">Home</a>
+      </li>
 
-  <router-outlet></router-outlet>
+      <li class="nav-item">
+        <a class="nav-items" mat-button #Action id="Action" (click)="getShowsByGenre(Action)">Action</a>
+      </li>
+      <li>
+        <a class="nav-items" mat-button #Comedy id="Comedy" (click)="getShowsByGenre(Comedy)">Comedy</a>
+      </li>
+      <li>
+        <a class="nav-items" mat-button #Drama id="Drama" (click)="getShowsByGenre(Drama)">Drama</a>
+      </li>
+      <li>
+        <a class="nav-items" mat-button (click)="getshowschedule()">Schedules</a>
+      </li>
+    </ul>
+    <app-searchbar class="search-bar" (searchEvent)="doSearch($event)"></app-searchbar>
+  </div>
+</nav>
+
+<app-search-show [searchShow]="currentShowName"></app-search-show>
+<router-outlet></router-outlet>
 </div>

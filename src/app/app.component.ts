@@ -7,6 +7,7 @@ import { ShowsService } from './Services/shows.service';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +27,12 @@ export class AppComponent {
 
   constructor(private SearchService:SearchService,private route: ActivatedRoute,private ShowService:ShowsService, private customRouter:Router){}
  
+ navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
   doSearch(searchValue)
   {
     //window.location.href=`/shows/search`;

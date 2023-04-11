@@ -1,14 +1,9 @@
-.form-search {
-  display: flex;
-  justify-content: center;
-
+.search-form {
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
 }
 
-.search-icon {
-  padding-right: 5px;
-  justify-self: center;
-}
-
-.input-search {
-  padding-right: 1rem;
+.search-full-width {
+  width: 100%;
 }
