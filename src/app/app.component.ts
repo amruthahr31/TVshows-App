@@ -32,8 +32,8 @@ export class AppComponent  {
  
   onSelect(event)
   {
-      console.log(event);
-      console.log("Entered onSelect filter : " + event.target.firstChild.data);
+      //console.log(event);
+      //console.log("Entered onSelect filter : " + event.target.firstChild.data);
       window.location.href=(`/shows/genre/${event.target.firstChild.data}`);
   }
   
@@ -58,17 +58,6 @@ export class AppComponent  {
    window.location.href=``;
  }
 
-    getShowsByGenre(event) {
 
-   // var target= event.target||event.srcElement||event.currentTarget;
-    //var idAttr = target.attributes.id;
-     //var value = idAttr.nodeValue;
-    var filter = event.target.value;
-    console.log("valuegenre:" + filter);
-
-    
-  
-    window.location.href=`/shows/genre/Action`;
-  } 
   
 }
