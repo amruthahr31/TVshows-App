@@ -1,42 +1,10 @@
-
-.container{
-  background-image: url('/assets/images/tv.png');
-  margin-top: 50px;
-  width:100%;
-  height:100%;
-}
-#show_name {
+.show-list {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 130px;
   font-weight: bold;
-  text-align: center;
-  padding-right: 30px;
 }
 
-.col-sm-3 {
-  padding-bottom: 25px;
-  
-  
-}
-
-.row{
-  background-image: url('/assets/images/tv.png');
-}
-
-.toolbar{
-  margin-bottom: 30px;
-  width:100%;
-
-}
-
-#searchbox{
-  text-align: left;
-  margin:right;
-  width:60%;
-  margin-left: 50%;
-
-}
-
-body{
-  background-image: url('/assets/images/tv.png');
-  width:100%;
-  height:100%;
+.show-list:hover {
+  cursor: pointer;
 }

@@ -1,37 +1,41 @@
 <div>
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-  <img class="logo" (click)="gethomepage()" src="../assets/images/logo-2 .png" />
-  </a>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img class="logo" (click)="gethomepage()" src="../assets/images/logo-2 .png" />
+    </a>
 
-  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-items" mat-button (click)="gethomepage()">Home</a>
+          
+        </li>
+        <li class="nav-item">
+          <a class="nav-items" mat-button #Action  (click)="getShowsByGenre($event)" value="Action">Action</a>
+        </li>
 
-  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-items" mat-button (click)="gethomepage()">Home</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-items" mat-button [routerLink]="['/shows/genre','Action']" routerLinkActive="active" (click)="onSelect($event)">Action</a>
+        </li>
+        <li>
+          <a class="nav-items" mat-button [routerLink]="['/shows/genre','Comedy']" routerLinkActive="active" (click)="onSelect($event)">Comedy</a>
+        </li>
+        <li>
+          <a class="nav-items" mat-button [routerLink]="['/shows/genre','Drama']" routerLinkActive="active" (click)="onSelect($event)">Drama</a>
+        </li>
+       
+        <li>
+          <a class="nav-items" mat-button (click)="getshowschedule()">Schedules</a>
+        </li>
+      </ul>
+      <app-searchbar class="search-bar" (searchEvent)="doSearch($event)"></app-searchbar>
+    </div>
+  </nav>
 
-      <li class="nav-item">
-        <a class="nav-items" mat-button #Action id="Action" (click)="getShowsByGenre(Action)">Action</a>
-      </li>
-      <li>
-        <a class="nav-items" mat-button #Comedy id="Comedy" (click)="getShowsByGenre(Comedy)">Comedy</a>
-      </li>
-      <li>
-        <a class="nav-items" mat-button #Drama id="Drama" (click)="getShowsByGenre(Drama)">Drama</a>
-      </li>
-      <li>
-        <a class="nav-items" mat-button (click)="getshowschedule()">Schedules</a>
-      </li>
-    </ul>
-    <app-searchbar class="search-bar" (searchEvent)="doSearch($event)"></app-searchbar>
-  </div>
-</nav>
-
-<app-search-show [searchShow]="currentShowName"></app-search-show>
-<router-outlet></router-outlet>
+  <app-search-show [searchShow]="currentShowName"></app-search-show>
+  <router-outlet></router-outlet>
 </div>

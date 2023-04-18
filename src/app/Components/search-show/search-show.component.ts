@@ -22,9 +22,6 @@ export class SearchShowComponent implements OnInit {
 
   getshowsdetails(showid:number){
     window.location.href=`/show/${showid}`;
-    
-
-
   }
 
 }

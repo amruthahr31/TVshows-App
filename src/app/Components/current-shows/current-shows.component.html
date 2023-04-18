@@ -1,25 +1,12 @@
-<!-- <mat-toolbar class="toolbar" >
-  <mat-toolbar-row>
-    <span>KAL TVshow  </span>    
-    <input type="text" id="searchbox" placeholder="Search..">
-    <button type="submit"><i class="material-icons md-18">search</i></button>
-  </mat-toolbar-row>
-  
-    <mat-toolbar-row> -->
-     
-  <!-- <div class="example-button-row">
-    <button mat-button color="primary" (click)="getshowschedule()" >Schedule</button>
+<div class="container show-list">
+  <div class="row">
+    <div class="col-sm-3 mb-5 text-center" *ngFor="let show of allshows">
+      <div class="card h-100 shadow-sm p-3 bg-white rounded" style="width: 15rem;">
+        <img [src]='show.image.medium' class="card-img-top rounded" alt="Avatar" (click)="getshowsdetails(show.id)">
+        <div class="card-body">
+          <h2 id="show_name" class="card-title mt-2 ">{{show.name}}</h2>
+        </div>
+      </div>
     </div>
-    </mat-toolbar-row>
-  </mat-toolbar> -->
- 
-
-<div class="container" >
-  <div class="row" >
-    <div class="col-sm-3" *ngFor="let show of allshows">
-      <img [src]='show.image.medium' alt="Avatar" class="image" (click)="getshowsdetails(show.id)">
-      <div id="show_name">{{show.name}}</div>
-    </div>
-    
   </div>
 </div>

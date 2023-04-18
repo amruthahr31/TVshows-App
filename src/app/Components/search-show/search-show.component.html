@@ -1,28 +1,4 @@
 
-<!--
-<header>
-
-  <div class="container">
-<a href="#" class="logo">KAL Academy TV</a>
-
-<input>
-<nav>
-
-  <ul>
-    <li><a href="#" router-link="/">Home</a></li>
-    <li><a href="#" router-link="/">Drama</a></li>
-    <li><a href="#" router-link="/">Action</a></li>
-    <li><a href="#" router-link="/">Comedy</a></li>
-
-    
-  </ul>
-</nav>
-
-
-  </div>
-</header>
--->
-<!--  -->
 <div *ngIf="searchShow?.length > 0; else errormessage">
      <!--<span>Number of shows is {{searchShow .length}}, {{searchShow.country}}</span>--> 
   <div class="box" *ngFor="let s of searchShow; let i = index" text-align="center">        

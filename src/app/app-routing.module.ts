@@ -8,13 +8,12 @@ import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ShowBasedOnGenreComponent } from './Components/show-based-on-genre/show-based-on-genre.component';
 
 const routes: Routes = [
- {path:'',component:CurrentShowsComponent},
- {path:'show/:showid',component:SeasonsEpisodesComponent},
- {path:'shows/schedule/:curDate',component:CurrentScheduleComponent},
-  { path: 'shows/search', component: SearchShowComponent },
-  {path:'shows/genre/:filter',component: ShowBasedOnGenreComponent}
- 
-  
+ {path:'', component:CurrentShowsComponent, pathMatch: 'full'},
+ {path:'show/:showid', component:SeasonsEpisodesComponent},
+ {path:'shows/schedule/:curDate', component:CurrentScheduleComponent},
+ {path: 'shows/search', component: SearchShowComponent },
+ {path:'shows/genre', component: ShowBasedOnGenreComponent},
+ {path:'shows/genre/:filter', component: ShowBasedOnGenreComponent}
 ];
 
 @NgModule({

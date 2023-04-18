@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ISearchShow } from './../app/isearch-show';
 import { SearchService } from './../app/Services/search.service';
 import { formatDate } from '@angular/common';
@@ -13,7 +13,7 @@ import { HostListener } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'TVshows-App';
   myDate = new Date();
   currentShowName: ISearchShow[];
@@ -29,6 +29,14 @@ export class AppComponent {
  
  navbarOpen = false;
 
+ 
+  onSelect(event)
+  {
+      console.log(event);
+      console.log("Entered onSelect filter : " + event.target.firstChild.data);
+      window.location.href=(`/shows/genre/${event.target.firstChild.data}`);
+  }
+  
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
@@ -49,12 +57,18 @@ export class AppComponent {
  {
    window.location.href=``;
  }
-  
-  getShowsByGenre(event) {
-    var filter = event.id;
-    console.log("valuegenre:" + event.id);
+
+    getShowsByGenre(event) {
+
+   // var target= event.target||event.srcElement||event.currentTarget;
+    //var idAttr = target.attributes.id;
+     //var value = idAttr.nodeValue;
+    var filter = event.target.value;
+    console.log("valuegenre:" + filter);
+
     
   
-    window.location.href=`/shows/genre/${filter}`;
+    window.location.href=`/shows/genre/Action`;
   } 
+  
 }
