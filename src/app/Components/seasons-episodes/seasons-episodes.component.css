@@ -17,15 +17,19 @@ mat-form-field{
   height:100%;
   margin-top: 15px;
 
-  background-image: url('/assets/images/tv.png');
-  border-style: groove;
-  border:2px solid black; 
+  
 }
-body{
-  color:white;
-margin:0;
-padding:0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-size:18px;
+
+.show-summary{
+margin-top:100px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
+
+.card-details{
+align-items: center;
+}
+
 

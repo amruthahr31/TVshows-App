@@ -1,10 +1,18 @@
-<div>
+<div class="show-summary">
+    <div class="card m-5 ">
+      <div class="row g-0">
+        <div class="col-md-4">
+        <div *ngIf="Scastsummary">
+           
+              <img [src]='Scastsummary?.image.medium'  alt="Avatar" >
+            </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">{{Scastsummary?.name}}</h1>            
+              <p class="card-text" *ngFor="let cast of Scastsummary._embedded.cast"> {{cast?.person.name}} ,</p>            
+          </div>
+        </div>
   
-  <div *ngIf="Scastsummary" class="details">
-  <!-- <div>{{showid}}</div> -->
-  <img [src]='Scastsummary?.image.medium' width ="250" height="350" alt="Avatar" class="image" style="float: left;">
-  
-  <div style=" color:orangered; font-size: larger;"><br>Show Name : {{Scastsummary?.name}}<br></div>
   <div> <br><mat-icon>star </mat-icon> {{Scastsummary.rating?.average}}<br></div>
   <div ><br>Show Summary: {{Scastsummary?.summary}}<br></div>
   <div><br>Show schedule: {{Scastsummary?.schedule.time}}<br></div>
@@ -41,5 +49,36 @@
         <div><br>Episode runtime:{{episode?.runtime}}</div>
   
 </div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="show-summary">
+<div class="card mb-3" style="max-width: 940px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <div *ngIf="Scastsummary">      
+        <img [src]='Scastsummary?.image.medium' alt="Avatar">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class="card-title">{{Scastsummary?.name}}</h1>
+        <div class="d-flex flex-row mb-3 card-details">
+          <p><mat-icon class="display-4">star </mat-icon></p>
+          <p class="display-4 flex-grow-1" >{{Scastsummary.rating?.average}}</p>
+          <p class="p-2 display-4">{{Scastsummary?.schedule.time}}</p>
+          <p class="p-2 text-success">{{Scastsummary?.language}}</p>
+          <p class="p-2 text-success" *ngFor="let day of Scastsummary.schedule.days">{{day}}</p>
+          
+        </div>
+        <p class="card-text">{{Scastsummary?.summary}}</p>
+        <p class="card-text"><small class="text-body-secondary card-text" *ngFor="let cast of Scastsummary._embedded.cast"> {{cast?.person.name}}, </small></p>
+      </div>
+    </div>
+  </div>
 </div>
 </div>

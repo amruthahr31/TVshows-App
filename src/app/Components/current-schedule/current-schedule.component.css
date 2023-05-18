@@ -1,18 +1,45 @@
-
-
-.schedulepage{
-  background-image: url('/assets/images/tv.png');
-  display: inline-block;
-  width:100%;
-  
+.schedule-container{
+  margin-top:100px; 
 }
 
-mat-card{
-  margin:15px;
-  position: relative;
-  
-  
-}
-mat-card-content{
+.header{
   text-align: center;
+  font-weight: 900 ;
+  letter-spacing: 10px;
+}
+.schedulepage {
+  
+  display: inline-block;
+  width: 100%;
+
+}
+
+mat-card {
+  margin-bottom: 30px;
+  position: relative;
+
+}
+
+mat-card-content {
+  text-align: center;
+  padding: 1px;
+  
+}
+
+.content-card{
+  border: 1px solid white;
+    font-size: large;
+    padding: 10px;
+    background-color: rgb(236, 231, 231);
+    color: black;
+    font-weight: bold;
+}
+
+.show-card{
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.heading{
+  font-weight: bolder;
 }

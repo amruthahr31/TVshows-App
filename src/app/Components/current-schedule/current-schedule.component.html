@@ -1,21 +1,18 @@
-<div *ngIf="schedules">
-  <h2 style="text-align: center;">Today's Schedule {{ currentdate }}</h2>
-  <div class="schedulepage">
-    <div *ngFor="let row of schedules | keyvalue">
-      
-        <mat-card>
-          <mat-card-content style="border:1px solid white; font-size: large; padding:10px; background-image:url('/assets/images/tv.png'); color: black; font-weight: bold;" >Show Time: {{ row.key }}</mat-card-content>
-            
-            <mat-card-content *ngFor="let i of row.value" >
-              Show: {{ i?.show.name }}  <br>
-              Network: {{i?.show.network?.name}}
+<div class="schedule-container">
+  <div class="container" *ngIf="schedules">
+    <h1 class="header">Today's Schedule</h1>
+      <div class="schedulepage">
+      <div *ngFor="let row of schedules|keyvalue">
+          <mat-card>
+            <mat-card-content class="content-card" >
+             <h1 class="heading">Show Time: {{ row?.key }}</h1> 
             </mat-card-content>
-            
-            
-
-        
-        </mat-card>
-      
-    </div>
+            <mat-card-content class="show-card" *ngFor="let i of row.value" >
+               <h2>{{ i?.show.name }}</h2> 
+               <h3>{{i?.show.network?.name}}</h3>
+              </mat-card-content>          
+            </mat-card>      
+        </div>
+      </div>
   </div>
 </div>

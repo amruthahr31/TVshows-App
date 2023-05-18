@@ -36,12 +36,7 @@ export class CurrentScheduleComponent implements OnInit {
         } 
        
       }
-      console.log("DATA", data);
-     
-      console.log("Showtime map", showTimeMap);
-      
-      
-      this.schedules = showTimeMap;
+         this.schedules = showTimeMap;
     });
    
   
