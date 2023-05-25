@@ -20,28 +20,13 @@
         <p class="card-text">{{Scastsummary?.summary}}</p>
         <p class="card-text"><small class="text-body-secondary card-text" *ngFor="let cast of Scastsummary._embedded.cast"> {{cast?.person.name}}, </small></p>
       <div>
-        <mat-form-field>
-          <mat-label>Seasons </mat-label>
-          <mat-select (selectionChange)="getseasonID($event)">
-            <mat-option *ngFor="let season of seasons" [value]="season.id">
-              {{season.number}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      
-        <div class="episode-card" *ngIf="episodes">
-          <div *ngFor="let episode of episodes" class="card"  style="width: 25rem;">
-            <img [src]='episode.image?.medium' class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">{{episode?.name}}</h5>
-                <p class="card-text">{{episode?.summary}}</p>
-                <h6 class="card-text">{{eh6isode?.runtime}}</h6>
-              </div>
-                
-          </div>
-        </div>
+      <h3> Seasons</h3>
+      <div class="seasons" *ngFor="let season of seasons" [value]="season.id">
+        <span>{{season.number}}</span>
       </div>
-
+      
+      </div>
+ 
       
 
       
